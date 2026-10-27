@@ -13,7 +13,7 @@ Du må ha Docker Desktop, eventuelt Docker Engine om du kjører Linux, installer
 
 + Åpne terminalen din og lag deg en mappe der du ønsker at prosjektet skal ligge. F.eks: `mkdir mitt-payload-prosjekt`
 + Naviger deg inn i mappen. F.eks: `cd mitt-payload-prosjekt`
-+ Kjør følgende kommando for å kopiere filene fra starteren inn i ditt eget prosjekt: `npx degit vegarcodes/payload-cms-docker-starter`
++ Kjør følgende kommando for å kopiere filene fra starteren inn i ditt eget prosjekt: `npx degit gloer/new-payload-starter`
 + Sjekk at filene nå ligger i mappen du laget. F.eks: `ls -la`
 + Herfra kan du starte et git-repository med `git init` og sjekke det inn på GitHub på vanlig måte.
 
