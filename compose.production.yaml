@@ -1,0 +1,30 @@
+services:
+  payload:
+    build: .
+    ports:
+      - '3000:3000'
+    depends_on:
+      - postgres
+    environment:
+      - DATABASE_URL=postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB}
+      - PAYLOAD_SECRET=${PAYLOAD_SECRET}
+    volumes:
+      - media:/app/media
+
+  postgres:
+    restart: always
+    image: postgres:18
+    volumes:
+      - pgdata:/var/lib/postgresql
+    ports:
+      - "5432:5432"
+    env_file:
+      - .env
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+
+volumes:
+  media:
+  pgdata:
